@@ -1,2 +1,2 @@
 # MXAlertView
-This is a alertView
+This is a custom alertView.
