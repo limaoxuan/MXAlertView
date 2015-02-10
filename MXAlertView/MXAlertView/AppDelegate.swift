@@ -17,6 +17,51 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Override point for customization after application launch.
+        // 窗口的代码
+        // 窗口的尺寸
+        
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        self.window?.backgroundColor = UIColor.whiteColor()
+        
+        self.window?.makeKeyAndVisible()
+        
+        // 灰色的遮挡层
+        //        遮挡层的
+        let overLayView = UIView()
+        overLayView.backgroundColor = RGBA(0, 0, 0, 0.3)
+        overLayView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.window?.addSubview(overLayView)
+        
+        
+        //        overLayView.alpha = 1
+        setLocationCurrentInSuperViewlocationCenter(self.window!, overLayView,Int(UIScreen.mainScreen().bounds.width),Int(UIScreen.mainScreen().bounds.height))
+        
+        let alertDimension = 250
+        let alertView = UIView()
+        alertView.backgroundColor = UIColor.whiteColor()
+        //alertView.backgroundColor = UIColor(patternImage: UIImage(named: "Image")!)
+        // 初始尺寸为1.2倍
+        alertView.transform = CGAffineTransformMakeScale(1.2, 1.2)
+        alertView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        alertView.layer.cornerRadius = 10
+        overLayView.addSubview(alertView)
+        
+        setLocationCurrentInSuperViewlocationCenter(overLayView, alertView, alertDimension, alertDimension)
+        
+        //        // 设置阴影
+        alertView.layer.shadowColor = UIColor.blackColor().CGColor
+        //阴影偏移
+        alertView.layer.shadowOffset = CGSizeMake(0, 5)
+        // 阴影透明度
+        alertView.layer.shadowOpacity = 1
+        //阴影尺寸
+        alertView.layer.shadowRadius = 10
+        
+        
+
         return true
     }
 
