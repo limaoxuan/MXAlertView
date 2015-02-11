@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B1AED671A89E8A3001E811E /* MXAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1AED661A89E8A3001E811E /* MXAnimation.swift */; };
 		9B4E0EB81A89DF1300BA03E3 /* CCConstrains.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4E0EB71A89DF1300BA03E3 /* CCConstrains.swift */; };
 		9B4E0EBA1A89DF2900BA03E3 /* MXAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4E0EB91A89DF2900BA03E3 /* MXAlertView.swift */; };
 		9B4E0EBC1A89DF2F00BA03E3 /* MXEaseNormalTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4E0EBB1A89DF2F00BA03E3 /* MXEaseNormalTools.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9B1AED661A89E8A3001E811E /* MXAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXAnimation.swift; sourceTree = "<group>"; };
 		9B4E0EB71A89DF1300BA03E3 /* CCConstrains.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCConstrains.swift; sourceTree = "<group>"; };
 		9B4E0EB91A89DF2900BA03E3 /* MXAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXAlertView.swift; sourceTree = "<group>"; };
 		9B4E0EBB1A89DF2F00BA03E3 /* MXEaseNormalTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXEaseNormalTools.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		9BF8EC011A84B40F004F488E /* MXAlertView */ = {
 			isa = PBXGroup;
 			children = (
+				9B1AED661A89E8A3001E811E /* MXAnimation.swift */,
 				9B4E0EBB1A89DF2F00BA03E3 /* MXEaseNormalTools.swift */,
 				9B4E0EB71A89DF1300BA03E3 /* CCConstrains.swift */,
 				9BF8EC041A84B40F004F488E /* AppDelegate.swift */,
@@ -227,6 +230,7 @@
 				9BF8EC0A1A84B40F004F488E /* ViewController.swift in Sources */,
 				9B4E0EBC1A89DF2F00BA03E3 /* MXEaseNormalTools.swift in Sources */,
 				9B4E0EBA1A89DF2900BA03E3 /* MXAlertView.swift in Sources */,
+				9B1AED671A89E8A3001E811E /* MXAnimation.swift in Sources */,
 				9BF8EC081A84B40F004F488E /* MXAlertView.xcdatamodeld in Sources */,
 				9BF8EC051A84B40F004F488E /* AppDelegate.swift in Sources */,
 				9B4E0EB81A89DF1300BA03E3 /* CCConstrains.swift in Sources */,
