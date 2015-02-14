@@ -27,79 +27,94 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         self.window?.makeKeyAndVisible()
         
-        // 灰色的遮挡层
-        //        遮挡层的
-        let overLayView = UIView()
-        overLayView.backgroundColor = RGBA(0, 0, 0, 0.3)
-        overLayView.alpha = 0
-        overLayView.setTranslatesAutoresizingMaskIntoConstraints(false)
-        self.window?.addSubview(overLayView)
-        
-        
-        
-        setLocationCurrentInSuperViewlocationCenter(self.window!, overLayView,Int(UIScreen.mainScreen().bounds.width),Int(UIScreen.mainScreen().bounds.height))
-        
-        let alertDimension = 250
-        let alertView = UIView()
-        alertView.backgroundColor = UIColor.whiteColor()
-        //alertView.backgroundColor = UIColor(patternImage: UIImage(named: "Image")!)
-        // 初始尺寸为1.2倍
-        
-        alertView.alpha = 0
-        alertView.setTranslatesAutoresizingMaskIntoConstraints(false)
-        alertView.layer.cornerRadius = 10
-        overLayView.addSubview(alertView)
-        
-        setLocationCurrentInSuperViewlocationCenter(overLayView, alertView, alertDimension, alertDimension)
-        alertView.transform = CGAffineTransformMakeScale(1.2, 1.2)
-        //        // 设置阴影
-        alertView.layer.shadowColor = UIColor.blackColor().CGColor
-        //阴影偏移
-        alertView.layer.shadowOffset = CGSizeMake(0, 5)
-        // 阴影透明度
-        alertView.layer.shadowOpacity = 1
-        //阴影尺寸
-        alertView.layer.shadowRadius = 10
-        
-        
-        
-//        let layer = CALayer(layer: alertView.layer)
-        
-        //        layer.frame =
-        
-        
-        
-        
-        // autolayout 必须设置
-        //        如果你想要立即刷新你的view,调用layoutIfNeeded
-        alertView.layoutIfNeeded()
-        alertView.layer.removeAllAnimations()
+//        // 灰色的遮挡层
+//        //        遮挡层的
+//        let overLayView = UIView()
+//        overLayView.backgroundColor = RGBA(0, 0, 0, 0.3)
+//        overLayView.alpha = 0
+//        overLayView.setTranslatesAutoresizingMaskIntoConstraints(false)
+//        self.window?.addSubview(overLayView)
+//        
+//        
+//        
+//        setLocationCurrentInSuperViewlocationCenter(self.window!, overLayView,Int(UIScreen.mainScreen().bounds.width),Int(UIScreen.mainScreen().bounds.height))
+//        
+//        let alertDimension = 250
+//        let alertView = UIView()
+//        alertView.backgroundColor = UIColor.whiteColor()
+//        //alertView.backgroundColor = UIColor(patternImage: UIImage(named: "Image")!)
+//        // 初始尺寸为1.2倍
+//        
+//        alertView.alpha = 0
+//        alertView.setTranslatesAutoresizingMaskIntoConstraints(false)
+//        alertView.layer.cornerRadius = 10
+//        overLayView.addSubview(alertView)
+//        
+//        setLocationCurrentInSuperViewlocationCenter(overLayView, alertView, alertDimension, alertDimension)
+//        alertView.transform = CGAffineTransformMakeScale(1.2, 1.2)
+//        //        // 设置阴影
+//        alertView.layer.shadowColor = UIColor.blackColor().CGColor
+//        //阴影偏移
+//        alertView.layer.shadowOffset = CGSizeMake(0, 5)
+//        // 阴影透明度
+//        alertView.layer.shadowOpacity = 1
+//        //阴影尺寸
+//        alertView.layer.shadowRadius = 10
+//        
+//        
+//        
+////        let layer = CALayer(layer: alertView.layer)
+//        
+//        //        layer.frame =
+//        
+//        
+//        
+//        
+//        // autolayout 必须设置
+//        //        如果你想要立即刷新你的view,调用layoutIfNeeded
+//        alertView.layoutIfNeeded()
+//        alertView.layer.removeAllAnimations()
         //        MXRotateAnimation(alertView)
+        
+        let mxAlertView = MXAlertView()
+        mxAlertView.alpha = 0
+        mxAlertView.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.window?.addSubview(mxAlertView)
+        
+        
+        setLocationCurrentInSuperViewlocationCenter(self.window!,mxAlertView, Int(screenWidth),Int(screenHeight))
+
         
         var minutes = 1 * Double(NSEC_PER_SEC)
         
         var dtime = dispatch_time(DISPATCH_TIME_NOW, Int64(minutes))
         dispatch_after(dtime, dispatch_get_main_queue()) { () -> Void in
             
-            UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
-                overLayView.alpha = 1
-                alertView.alpha = 1
-                }, completion: nil)
-            MXShowAnimation(alertView, AnimationType.Scale)
+            
+            
+            mxAlertView.showAlertAnimation()
+        
+//            UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+////                overLayView.alpha = 1
+////                alertView.alpha = 1
+//                }, completion: nil)
+//            MXShowAnimation(alertView, AnimationType.Scale)
         }
         
         minutes = 3 * Double(NSEC_PER_SEC)
         dtime = dispatch_time(DISPATCH_TIME_NOW, Int64(minutes))
         dispatch_after(dtime, dispatch_get_main_queue()) { () -> Void in
             
-            UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
-                overLayView.alpha = 0
-                alertView.alpha = 0
-                }, completion: nil)
-            MXDismissAnimation(alertView, AnimationType.Scale)
+            
+             mxAlertView.hiddenAlertAnimation()
+//            UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+////                overLayView.alpha = 0
+////                alertView.alpha = 0
+//                }, completion: nil)
+//            MXDismissAnimation(alertView, AnimationType.Scale)
         }
         
-        alertView.layoutIfNeeded()
+//        alertView.layoutIfNeeded()
         //        MXKeyframeAnimation(alertView)
         //        MXGroupAnimation(MXScaleAnimation(), animationTwo: MXPositionAnimation(alertView), animationThree: MXRotateAnimation(), currentView: alertView)
         //        MXGroupAnimation(animationOne:MXScaleAnimation(), animationTwo: MXPositionAnimation(), animationThree: MXRotateAnimation(), currentView: alertView)

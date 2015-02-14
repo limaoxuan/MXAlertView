@@ -14,9 +14,9 @@ import UIKit
 //public enum MXAlertViewTypes {
 //
 //case Warning
-//    
+//
 //case Progress
-//    
+//
 //case Default
 //
 //
@@ -27,7 +27,7 @@ import UIKit
 //}
 private let dimension = 250
 
-private let sharedInstance = MXAlertView()
+//private let sharedInstance = MXAlertView()
 
 
 class MXAlertView : UIView{
@@ -36,30 +36,51 @@ class MXAlertView : UIView{
     var titleLabel : UILabel?
     var cancelButton : UIButton?
     var overLayView : UIView!
+    var alertView : UIView!
+    var isOpen : Bool = false
     
     
-    class var sharedManager: MXAlertView {
-        return sharedInstance
-    }
     
-    override init() {
-        super.init()
+    //    class var sharedManager: MXAlertView {
+    //        return sharedInstance
+    //    }
+    
+    override init(frame: CGRect) {
+        
+        super.init(frame: frame)
         setupAlertView()
     }
-
+    convenience override init() {
+        //        self.ini
+        
+        self.init(frame: CGRectZero)
+    }
     required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupAlertView()
+        
         fatalError("init(coder:) has not been implemented")
+        
+        
     }
     
-
-    
-   private func setupAlertView(){
-    
-
-    installOverLayView()
     
     
-
+    private func setupAlertView(){
+        
+        //        setContainerSize()
+        
+        
+        installOverLayView()
+        installAlertView()
+        
+        
+        
+    }
+    
+    
+    func setContainerSize(){
+        
     }
     
     private  func installOverLayView(){
@@ -74,10 +95,10 @@ class MXAlertView : UIView{
     }
     
     private func installAlertView(){
-    
-    
-    
-        let alertView = UIView()
+        
+        
+        
+        alertView = UIView()
         alertView.backgroundColor = UIColor.whiteColor()
         //alertView.backgroundColor = UIColor(patternImage: UIImage(named: "Image")!)
         // 初始尺寸为1.2倍
@@ -103,32 +124,72 @@ class MXAlertView : UIView{
     }
     
     
-    func showAnimation(){
     
-    
-    
-    
-    
-    
-    
-    
-    
+    func showAlertAnimation(){
+        
+        animationWillStart()
+        
+        
+        if (isOpen == false){
+            
+            
+            
+            UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+                self.alpha = 1
+                self.overLayView.alpha = 1
+                self.alertView.alpha = 1
+                }, completion: nil)
+            
+            MXShowAnimation(alertView, AnimationType.Scale)
+            
+            
+            
+            
+            
+            isOpen = true
+        }
+        
+        
+        
+        
+        
     }
     
-    func hiddenAnimation(){
     
     
+    func hiddenAlertAnimation(){
+        
+        
+        animationWillStart()
+        
+        if(isOpen == true){
+            
+            
+            UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: { () -> Void in
+                self.overLayView.alpha = 0
+                self.alertView.alpha = 0
+                self.alpha = 0
+                }, completion: nil)
+            
+            MXDismissAnimation(alertView, AnimationType.Scale)
+            
+            isOpen = false
+        }
+        
+        
+    }
     
     
-    
-    
-    
+    func animationWillStart(){
+        
+        alertView.layoutIfNeeded()
+        alertView.layer.removeAllAnimations()
+        
     }
     
     
     
     
-
     
     
 }
