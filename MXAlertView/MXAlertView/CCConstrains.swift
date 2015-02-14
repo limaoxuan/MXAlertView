@@ -14,7 +14,7 @@ func setConstraintsWithStringWithCurrentView(format : String,superView : UIView,
     
     
     
-    var constaraints = NSLayoutConstraint.constraintsWithVisualFormat(format, options: NSLayoutFormatOptions(0), metrics: nil, views:viewDic)
+    var constaraints = NSLayoutConstraint.constraintsWithVisualFormat(format, options: NSLayoutFormatOptions(0), metrics: nil, views:viewDic as! [NSObject : AnyObject])
     superView.addConstraints(constaraints)
     
 }

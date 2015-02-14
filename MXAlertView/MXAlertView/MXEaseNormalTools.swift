@@ -10,6 +10,9 @@
 import UIKit
 
 
+let screenWidth = UIScreen.mainScreen().bounds.width
+
+let screenHeight = UIScreen.mainScreen().bounds.height
 
 
 /**
