@@ -6,13 +6,13 @@
 //  Copyright (c) 2015年 lee. All rights reserved.
 //
 
+
+
 import UIKit
 
 
+private let dimension = 250 // This is a alertView dimension
 
-private let dimension = 250
-
-//private let sharedInstance = MXAlertView()
 
 
 class MXAlertView : UIView{
@@ -25,21 +25,18 @@ class MXAlertView : UIView{
     var isOpen : Bool = false
     
     
-    
-    //    class var sharedManager: MXAlertView {
-    //        return sharedInstance
-    //    }
+// MARK: - Initialization
     
     override init(frame: CGRect) {
         
         super.init(frame: frame)
         setupAlertView()
     }
+    
     convenience override init() {
-        //        self.ini
-        
-        self.init(frame: CGRectZero)
+        self.init(frame: CGRectMake(0, 0, screenWidth, screenHeight))
     }
+    
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupAlertView()
@@ -49,24 +46,24 @@ class MXAlertView : UIView{
         
     }
     
-    
+// MARK: - SetUpMethod
+
+
     
     private func setupAlertView(){
-        
-        //        setContainerSize()
-        
-        
+        self.alpha = 0
+//        self.setTranslatesAutoresizingMaskIntoConstraints(false)
+
         installOverLayView()
         installAlertView()
-        
-        
+       
+//        UIAlertView
         
     }
     
     
-    func setContainerSize(){
-        
-    }
+  
+    
     
     private  func installOverLayView(){
         // 灰色的遮挡层
@@ -74,6 +71,7 @@ class MXAlertView : UIView{
         overLayView = UIView()
         overLayView.backgroundColor = RGBA(0, 0, 0, 0.3)
         overLayView.alpha = 0
+//        overLayView.clipsToBounds = true
         overLayView.setTranslatesAutoresizingMaskIntoConstraints(false)
         self.addSubview(overLayView)
         setLocationCurrentInSuperViewlocationCenter(self,overLayView, Int(screenWidth),Int(screenHeight))
@@ -87,7 +85,7 @@ class MXAlertView : UIView{
         alertView.backgroundColor = UIColor.whiteColor()
         //alertView.backgroundColor = UIColor(patternImage: UIImage(named: "Image")!)
         // 初始尺寸为1.2倍
-        
+//        alertView.clipsToBounds = true
         alertView.alpha = 0
         alertView.setTranslatesAutoresizingMaskIntoConstraints(false)
         alertView.layer.cornerRadius = 10
@@ -109,7 +107,16 @@ class MXAlertView : UIView{
     }
     
     
+// MARK: - AnimationMethod
     
+    
+    func animationWillStart(){
+        
+        alertView.layoutIfNeeded()
+        alertView.layer.removeAllAnimations()
+        
+    }
+
     func showAlertAnimation(){
         
         animationWillStart()
@@ -165,15 +172,12 @@ class MXAlertView : UIView{
     }
     
     
-    func animationWillStart(){
-        
-        alertView.layoutIfNeeded()
-        alertView.layer.removeAllAnimations()
-        
-    }
     
-    
-    
+// MARK: - Location request
+//    func setContainerSize(){
+//        setLocationCurrentInSuperViewlocationCenter(self.window!,self, Int(screenWidth),Int(screenHeight))
+//    }
+//    
     
     
     
