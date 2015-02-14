@@ -10,21 +10,6 @@ import UIKit
 
 
 
-
-//public enum MXAlertViewTypes {
-//
-//case Warning
-//
-//case Progress
-//
-//case Default
-//
-//
-//
-//
-//
-//
-//}
 private let dimension = 250
 
 //private let sharedInstance = MXAlertView()
