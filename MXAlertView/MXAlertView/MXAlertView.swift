@@ -82,7 +82,7 @@ class MXAlertView : UIView{
         
         
         alertView = UIView()
-        alertView.backgroundColor = UIColor.whiteColor()
+        alertView.backgroundColor = RGBA(56, 170, 252, 1)
         //alertView.backgroundColor = UIColor(patternImage: UIImage(named: "Image")!)
         // 初始尺寸为1.2倍
 //        alertView.clipsToBounds = true

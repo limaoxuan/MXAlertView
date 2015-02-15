@@ -28,37 +28,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
 
         
-        let mxAlertView = MXAlertView()
-        self.window?.addSubview(mxAlertView)
-//        mxAlertView.setContainerSize()
+        let viewController = ViewController()
         
-//        mxAlertView.alpha = 0
-//        mxAlertView.setTranslatesAutoresizingMaskIntoConstraints(false)
-//       
+        
+        self.window?.rootViewController  = viewController
+        
+        
+//        let mxAlertView = MXAlertView()
+//        self.window?.addSubview(mxAlertView)
+
+        
+        
+
+        
+//        var minutes = 1 * Double(NSEC_PER_SEC)
+//        
+//        var dtime = dispatch_time(DISPATCH_TIME_NOW, Int64(minutes))
+//        dispatch_after(dtime, dispatch_get_main_queue()) { () -> Void in
+//            
+//            
+//            
+//            mxAlertView.showAlertAnimation()
+//        
 //
-//        setLocationCurrentInSuperViewlocationCenter(self.window!,mxAlertView, Int(screenWidth),Int(screenHeight))
-
-        
-        var minutes = 1 * Double(NSEC_PER_SEC)
-        
-        var dtime = dispatch_time(DISPATCH_TIME_NOW, Int64(minutes))
-        dispatch_after(dtime, dispatch_get_main_queue()) { () -> Void in
-            
-            
-            
-            mxAlertView.showAlertAnimation()
-        
-
-        }
-        
-        minutes = 3 * Double(NSEC_PER_SEC)
-        dtime = dispatch_time(DISPATCH_TIME_NOW, Int64(minutes))
-        dispatch_after(dtime, dispatch_get_main_queue()) { () -> Void in
-            
-            
-             mxAlertView.hiddenAlertAnimation()
-
-        }
+//        }
+//        
+//        minutes = 3 * Double(NSEC_PER_SEC)
+//        dtime = dispatch_time(DISPATCH_TIME_NOW, Int64(minutes))
+//        dispatch_after(dtime, dispatch_get_main_queue()) { () -> Void in
+//            
+//            
+//             mxAlertView.hiddenAlertAnimation()
+//
+//        }
 
         return true
     }

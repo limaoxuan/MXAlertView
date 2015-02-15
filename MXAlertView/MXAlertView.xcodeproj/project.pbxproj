@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		9B1AED671A89E8A3001E811E /* MXAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1AED661A89E8A3001E811E /* MXAnimation.swift */; };
-		9B312CB31A8F1D3A00CD0447 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B312CB21A8F1D3A00CD0447 /* AppDelegate.swift */; };
-		9B4E0EB81A89DF1300BA03E3 /* CCConstrains.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4E0EB71A89DF1300BA03E3 /* CCConstrains.swift */; };
-		9B4E0EBA1A89DF2900BA03E3 /* MXAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4E0EB91A89DF2900BA03E3 /* MXAlertView.swift */; };
 		9B4E0EBC1A89DF2F00BA03E3 /* MXEaseNormalTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B4E0EBB1A89DF2F00BA03E3 /* MXEaseNormalTools.swift */; };
+		9B9FD2611A8F3A5700244A7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9FD25F1A8F3A5700244A7A /* AppDelegate.swift */; };
+		9B9FD2621A8F3A5700244A7A /* MXAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9FD2601A8F3A5700244A7A /* MXAlertView.swift */; };
+		9B9FD2641A8F43BD00244A7A /* CCConstrains.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B9FD2631A8F43BD00244A7A /* CCConstrains.swift */; };
 		9BF8EC081A84B40F004F488E /* MXAlertView.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9BF8EC061A84B40F004F488E /* MXAlertView.xcdatamodeld */; };
 		9BF8EC0A1A84B40F004F488E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF8EC091A84B40F004F488E /* ViewController.swift */; };
 		9BF8EC0D1A84B40F004F488E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BF8EC0B1A84B40F004F488E /* Main.storyboard */; };
@@ -32,10 +32,10 @@
 
 /* Begin PBXFileReference section */
 		9B1AED661A89E8A3001E811E /* MXAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXAnimation.swift; sourceTree = "<group>"; };
-		9B312CB21A8F1D3A00CD0447 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9B4E0EB71A89DF1300BA03E3 /* CCConstrains.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCConstrains.swift; sourceTree = "<group>"; };
-		9B4E0EB91A89DF2900BA03E3 /* MXAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXAlertView.swift; sourceTree = "<group>"; };
 		9B4E0EBB1A89DF2F00BA03E3 /* MXEaseNormalTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXEaseNormalTools.swift; sourceTree = "<group>"; };
+		9B9FD25F1A8F3A5700244A7A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9B9FD2601A8F3A5700244A7A /* MXAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MXAlertView.swift; sourceTree = "<group>"; };
+		9B9FD2631A8F43BD00244A7A /* CCConstrains.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CCConstrains.swift; sourceTree = "<group>"; };
 		9BF8EBFF1A84B40F004F488E /* MXAlertView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MXAlertView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BF8EC031A84B40F004F488E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BF8EC071A84B40F004F488E /* MXAlertView.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MXAlertView.xcdatamodel; sourceTree = "<group>"; };
@@ -89,10 +89,10 @@
 			children = (
 				9B1AED661A89E8A3001E811E /* MXAnimation.swift */,
 				9B4E0EBB1A89DF2F00BA03E3 /* MXEaseNormalTools.swift */,
-				9B4E0EB71A89DF1300BA03E3 /* CCConstrains.swift */,
+				9B9FD2631A8F43BD00244A7A /* CCConstrains.swift */,
 				9BF8EC091A84B40F004F488E /* ViewController.swift */,
-				9B312CB21A8F1D3A00CD0447 /* AppDelegate.swift */,
-				9B4E0EB91A89DF2900BA03E3 /* MXAlertView.swift */,
+				9B9FD25F1A8F3A5700244A7A /* AppDelegate.swift */,
+				9B9FD2601A8F3A5700244A7A /* MXAlertView.swift */,
 				9BF8EC0B1A84B40F004F488E /* Main.storyboard */,
 				9BF8EC0E1A84B40F004F488E /* Images.xcassets */,
 				9BF8EC101A84B40F004F488E /* LaunchScreen.xib */,
@@ -227,13 +227,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B9FD2611A8F3A5700244A7A /* AppDelegate.swift in Sources */,
 				9BF8EC0A1A84B40F004F488E /* ViewController.swift in Sources */,
+				9B9FD2641A8F43BD00244A7A /* CCConstrains.swift in Sources */,
 				9B4E0EBC1A89DF2F00BA03E3 /* MXEaseNormalTools.swift in Sources */,
-				9B4E0EBA1A89DF2900BA03E3 /* MXAlertView.swift in Sources */,
 				9B1AED671A89E8A3001E811E /* MXAnimation.swift in Sources */,
-				9B312CB31A8F1D3A00CD0447 /* AppDelegate.swift in Sources */,
+				9B9FD2621A8F3A5700244A7A /* MXAlertView.swift in Sources */,
 				9BF8EC081A84B40F004F488E /* MXAlertView.xcdatamodeld in Sources */,
-				9B4E0EB81A89DF1300BA03E3 /* CCConstrains.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
